@@ -1,0 +1,35 @@
+{
+  "name": "spreadsheet",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "William I. Olojede",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server/build/server.js",
+    "build": "babel server -d server/build --source-maps --ignore ./node_modules",
+    "start:dev": "babel-watch server/server.js",
+    "db:migrate": "sequelize db:migrate",
+    "db:migrate:undo": "sequelize db:migrate:undo:all"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.10.3",
+    "@babel/core": "^7.10.3",
+    "@babel/node": "^7.10.3",
+    "@babel/plugin-syntax-class-properties": "^7.10.1",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/register": "^7.10.3",
+    "@hapi/joi": "^17.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-winston": "^4.0.3",
+    "pg": "^8.2.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.2.3",
+    "sequelize-cli": "^6.1.0",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "babel-watch": "^7.0.0"
+  }
+}
