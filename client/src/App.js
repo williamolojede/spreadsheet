@@ -43,7 +43,8 @@ function App() {
     if (digit.test(x)) {
       return Number(x)
     } else {
-      const [col, row] = x.split('')
+      const col =  x.substring(0, 1)
+      const row = x.substring(1)
       return Number(getCellValue(Number(row), col).computed)
     }
   }
