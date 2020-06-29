@@ -16,8 +16,14 @@ const config = {
   url: databaseURL,
   dialect,
   logging: isDevMode ? log => log : false,
+  ssl: true,
   dialectOptions: {
     multipleStatements: true,
+    ssl: {
+      require: true,
+      // Ref.: https://github.com/brianc/node-postgres/issues/2009
+      rejectUnauthorized: false,
+    },
   },
 };
 

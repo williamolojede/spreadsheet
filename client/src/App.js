@@ -32,7 +32,7 @@ function App() {
         column,
         value,
       })
-      const res = await axios.get(' http://localhost:4200/api')
+      const res = await axios.get(API_URL)
       setGrid(res.data.rows)      
     }
   }
