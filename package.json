@@ -7,9 +7,11 @@
   "scripts": {
     "start": "node server/build/server.js",
     "build": "babel server -d server/build --source-maps --ignore ./node_modules",
+    "build:client": "cd client && yarn && yarn build",
     "start:dev": "babel-watch server/server.js",
     "db:migrate": "sequelize db:migrate",
-    "db:migrate:undo": "sequelize db:migrate:undo:all"
+    "db:migrate:undo": "sequelize db:migrate:undo:all",
+    "heroku-postbuild": "yarn db:migrate && yarn build && yarn build:client"
   },
   "dependencies": {
     "@babel/cli": "^7.10.3",
