@@ -44,7 +44,8 @@ function App() {
       return Number(x)
     } else {
       const col =  x.substring(0, 1)
-      const row = x.substring(1)
+      const row = Number(x.substring(1))
+      if(row > 10 || row < 1) return 0
       return Number(getCellValue(Number(row), col).computed)
     }
   }
